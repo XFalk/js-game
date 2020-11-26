@@ -13,7 +13,8 @@ close.addEventListener('click', () => {
 });
 // функция запуска раунда
 function playRound(e) {
-    let playerSelection = e.path[1].id;
+    let playerSelection = e.currentTarget.id;
+    console.log(playerSelection);
     let computerSelection = computerPlay();
     let result;
     if (playerSelection == computerSelection) {
