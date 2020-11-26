@@ -1,0 +1,76 @@
+body {
+    display: flex;
+    flex-direction: column;
+    background: #f0f0f0;
+}
+
+.header {
+    display: flex;
+    background-image: url(img/header.jpg);
+    height: 20vh;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.header h1 {
+    text-align: center;
+    font-family: monospace;
+    padding-right: 17%;
+}
+
+.header img {
+    height: 100%;
+}
+
+.content h2 {
+    text-align: center;
+    font-size: 30px;
+}
+
+.context {
+    display: flex;
+    justify-content: space-around;
+}
+
+.variable {
+    background: #c2c2c2;
+    width: 30%;
+    height: 30%;
+    text-align: center;
+    font-family: monospace;
+    font-size: 20px;
+}
+.variable:hover{
+cursor: pointer;
+   outline: 4mm outset #7f9fb8;
+}
+.result{
+display: flex;
+    justify-content: space-around;
+    margin-top: 3%;
+    background-color: #e3e3e3;
+}
+.result div{
+    font-size: 20px;
+    padding: 2%;
+}
+dialog{
+    
+    height: 20%;
+    width: 20%;
+    margin-top: 15%;
+    position: absolute;
+}
+dialog button{
+    margin-bottom: 20px;
+    position: absolute;
+    bottom: 2%;
+    right: 2%;
+}
+#game{
+    background-color: #f0f0f0;
+}
+footer{
+    text-align: center;
+        background-image: url(img/header.jpg)
+}

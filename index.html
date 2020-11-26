@@ -1,92 +1,52 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
 <head>
     <meta charset="UTF-8">
-    <title>JavaScript</title>
+    <title>Камень, ножницы, бумага</title>
+    <link href="style.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
-    <script>
-        // функция запуска раунда
-        function playRound(playerSelection, computerSelection) {
-            // ваш код здесь!
-            playerSelection = playerSelection.toLowerCase();
-            computerSelection = computerSelection.toLocaleLowerCase();
-            let result;
-            if (playerSelection == computerSelection) {
-                result = `Ничья`;
-            } else if (playerSelection == `камень` && computerSelection == `ножницы`) {
-                result = `Вы выиграли! Камнень бьёт ножницы`;
-            } else if (playerSelection == `камень` && computerSelection == `бумага`) {
-                result = `Вы проиграли! Бумага бьёт камень`;
-            } else if (playerSelection == `ножницы` && computerSelection == `камень`) {
-                result = `Вы проиграли! Камнень бьёт ножницы`;
-            } else if (playerSelection == `ножницы` && computerSelection == `бумага`) {
-                result = `Вы выиграли! Ножницы бьют бумагу`;
-            } else if (playerSelection == `бумага` && computerSelection == `камень`) {
-                result = `Вы выиграли! Бумага бьёт камень`;
-            } else if (playerSelection == `бумага` && computerSelection == `ножницы`) {
-                result = `Вы проиграли! Ножницы бьют бумагу`;
-            }
-            return result;
-        }
-
-        function computerPlay() {
-            let x = Math.floor(Math.random() * Math.floor(3));
-            let result;
-            switch (x) {
-                case 0:
-                    result = `камень`;
-                    break;
-                case 1:
-                    result = `ножницы`;
-                    break;
-                case 2:
-                    result = `бумага`;
-                    break;
-            }
-            return result;
-        }
-
-        function game() {
-            let computerCount = 0;
-            let playerCount = 0;
-            for (let i = 0; i < 5; i++) {
-                let x = i+1;
-                alert(`Раунд` + x)
-                let playerSelection = window.prompt(`Введите ваш вариант`, `камень`) // выбор игрока
-                let computerSelection = computerPlay() // выбор компьютера
-                console.log(`Компьютер выбрал - ` + computerSelection);
-                let result = playRound(playerSelection, computerSelection) // формируем результаты раунда   
-                console.log(result) // выводим результат*/
-                if (result.includes(`Вы выиграли`)) {
-                    playerCount = playerCount + 1;
-                } else if (result.includes(`Вы проиграли`)) {
-                    computerCount = computerCount + 1;
-                }
-            } if (computerCount == playerCount){
-                console.log(`По результатам пяти раундов у вас ничья
-Компьютер выиграл - ${computerCount} раз
-Вы выиграли - ${playerCount} раз`);
-            } else if (computerCount > playerCount){
-            console.log(`По результатам пяти раундов вы проиграли :-(
-Компьютер выиграл - ${computerCount} раз
-Вы выиграли - ${playerCount} раз`);
-            }else if (computerCount<playerCount){
-                         console.log(`По результатам пяти раундов вы выиграли :-)
-Компьютер выиграл - ${computerCount} раз
-Вы выиграли - ${playerCount} раз`);   
-            }
-        }
-        game();
-        /*const playerSelection = window.prompt(`Введите ваш вариант`, `камень`) // выбор игрока
-        const computerSelection = computerPlay() // выбор компьютера
-        console.log(`Компьютер выбрал - ` + computerSelection);
-        const result = playRound(playerSelection, computerSelection) // формируем результаты раунда
-        console.log(result) // выводим результат*/
-
-    </script>
+    <dialog close>
+        <p id="message">ТУТ ДОЛЖНО ЧТО-ТО БЫТЬ!!!</p>
+        <button id="close">Закрыть</button>
+    </dialog>
+    <div class="header">
+        <h1>Ваш соперник - ваш компьютер</h1>
+        <img src="img/header-logo.jpg">
+    </div>
+    <div class="content">
+        <h2> Сделайте свой выбор!!!</h2>
+        <div class="context">
+            <div class="variable" id="stone">
+                <p>КАМЕНЬ</p>
+                <img src="img/stone.png">
+            </div>
+            <div class="variable" id="scissors">
+                <p>НОЖНИЦЫ</p>
+                <img src="img/scissors.png">
+            </div>
+            <div class="variable" id="paper">
+                <p>БУМАГА</p>
+                <img src="img/paper.png">
+            </div>
+        </div>
+    </div>
+    <div class="result">
+        <div id="user">Здесь отобразится ваше количество побед</div>
+        <div id="game">Здесь будет отображаться ход игры</div>
+        <div id="comp">Здесь отобразится количество побед компьютера</div>
+    </div>
+    <footer>
+        <p>Игра продолжается до пяти побед</p>
+                            <p>
+                        <a href="https://vk.com/xfalk"><img src="img/vk.png" alt="ВК" width="50" height="50"></a>
+                        <a href="https://www.instagram.com/egor_xfalk/"><img src="img/inst.png" width="50" height="50" alt="Instagram"></a>
+                        <a href=" https://wa.me/79996408838?text=Добрый%день%Егор"><img src="img/whatsapp.png" width="50" height="50" alt="Whatsapp"></a>
+                    </p>
+    </footer>
+    <script src="index.js" async></script>
 </body>
 
 </html
